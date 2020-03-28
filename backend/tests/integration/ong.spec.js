@@ -8,6 +8,7 @@ describe('ONG',()=>{
     beforeEach(
         async () => {
             await connection.migrate.latest();
+            await connection.seed.run();
         }
     );
     
@@ -31,7 +32,7 @@ describe('ONG',()=>{
     it('should be able to login', async ()=>{
         const response = await request(app).post('/session')
         .send({
-            id: ongId
+            id: '1b339281'
         });
         expect(response.status).toBe(200);
     });
