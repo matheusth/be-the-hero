@@ -6,7 +6,7 @@ const Validate = {
             name: Joi.string().required(),
             email: Joi.string().email().required(),
             whatsapp: Joi.string().required().
-            pattern(/^(\([1-9]{2}\)) ([1-9]{1} )*\d{4}-\d{4}$/),
+            pattern(/^([1-9]{2})(9*)(\d{8})$/),
             city: Joi.string().required(),
             uf: Joi.string().required().length(2)
         })
